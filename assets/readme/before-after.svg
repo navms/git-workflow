@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="compare-title compare-desc">
+  <title id="compare-title">有无 git-workflow 的对比</title>
+  <desc id="compare-desc">上半部分 WITHOUT SKILL：Agent 直接 git commit，提交落在主干上，用户还没看到 diff，主干被污染。下半部分 WITH SKILL：改动在特性分支上，分支、提交、合并前都有琥珀色确认门禁，确认后才合并回主干，主干始终保持可发布。</desc>
+
+  <rect width="1200" height="330" rx="24" fill="#0B0D10"/>
+  <rect x="0.5" y="0.5" width="1199" height="329" rx="23.5" fill="none" stroke="#232A33"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+    <!-- row A: without skill -->
+    <g id="without-skill" transform="translate(64 0)">
+      <text x="0" y="66" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" letter-spacing="2.2" fill="#E5534B">WITHOUT SKILL</text>
+      <text x="0" y="102" font-size="22" font-weight="700" fill="#F3F5F8">Agent 直接提交</text>
+      <text x="0" y="130" font-size="18" fill="#8B949E">没有审查，改动直接进主干</text>
+    </g>
+
+    <g id="without-graph" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace">
+      <text x="400" y="66" font-size="14" fill="#5E6875">main</text>
+      <line x1="400" y1="104" x2="1136" y2="104" stroke="#39414B" stroke-width="2"/>
+      <circle cx="520" cy="104" r="5" fill="#6E7885"/>
+      <circle cx="700" cy="104" r="5" fill="#6E7885"/>
+      <circle cx="880" cy="104" r="11" fill="none" stroke="#E5534B" stroke-opacity="0.35" stroke-width="2"/>
+      <circle cx="880" cy="104" r="7" fill="#E5534B"/>
+
+      <text x="880" y="78" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif" font-size="18" font-weight="600" fill="#FF7B72">Agent 自行 commit</text>
+      <text x="880" y="138" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif" font-size="18" fill="#8B949E">你还没看到 diff，改动已经进了主干</text>
+    </g>
+
+    <line x1="64" y1="170" x2="1136" y2="170" stroke="#1B2129"/>
+
+    <!-- row B: with skill -->
+    <g id="with-skill" transform="translate(64 0)">
+      <text x="0" y="206" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" letter-spacing="2.2" fill="#FFC15E">WITH SKILL</text>
+      <text x="0" y="242" font-size="22" font-weight="700" fill="#F3F5F8">每一步都先问你</text>
+      <text x="0" y="270" font-size="18" fill="#8B949E">确认之后才继续，主干保持干净</text>
+    </g>
+
+    <g id="with-graph">
+      <text x="400" y="258" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" fill="#5E6875">main</text>
+      <line x1="400" y1="278" x2="1136" y2="278" stroke="#39414B" stroke-width="2"/>
+
+      <!-- feature branch -->
+      <path d="M560 278 C 585 238, 612 238, 634 238 L 888 238 C 912 238, 934 278, 960 278" fill="none" stroke="#6CB6FF" stroke-width="2"/>
+      <text x="638" y="222" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace" font-size="14" fill="#6CB6FF">feature</text>
+      <circle cx="560" cy="278" r="5" fill="#6CB6FF"/>
+      <circle cx="680" cy="238" r="5" fill="#6CB6FF"/>
+      <circle cx="770" cy="238" r="5" fill="#6CB6FF"/>
+      <circle cx="860" cy="238" r="5" fill="#6CB6FF"/>
+      <circle cx="960" cy="278" r="5" fill="#6CB6FF"/>
+      <circle cx="1040" cy="278" r="5" fill="#6E7885"/>
+
+      <!-- confirmation gates -->
+      <g transform="translate(560 278)">
+        <path d="M0 -10 L10 0 L0 10 L-10 0 Z" fill="#0B0D10" stroke="#FFC15E" stroke-width="1.7"/>
+        <path d="M0 -4 L4 0 L0 4 L-4 0 Z" fill="#FFC15E"/>
+      </g>
+      <g transform="translate(770 238)">
+        <path d="M0 -10 L10 0 L0 10 L-10 0 Z" fill="#0B0D10" stroke="#FFC15E" stroke-width="1.7"/>
+        <path d="M0 -4 L4 0 L0 4 L-4 0 Z" fill="#FFC15E"/>
+      </g>
+      <g transform="translate(960 278)">
+        <path d="M0 -10 L10 0 L0 10 L-10 0 Z" fill="#0B0D10" stroke="#FFC15E" stroke-width="1.7"/>
+        <path d="M0 -4 L4 0 L0 4 L-4 0 Z" fill="#FFC15E"/>
+      </g>
+
+      <text x="1136" y="258" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif" font-size="18" font-weight="600" fill="#FFC15E">主干保持可发布</text>
+    </g>
+  </g>
+</svg>
