@@ -27,11 +27,8 @@
 ## 安装
 
 ```bash
-mkdir -p ~/.dsh/skills
-cp -r git-workflow ~/.dsh/skills/
+npx skills add navms/git-workflow
 ```
-
-整个 skill 就是一个 `SKILL.md`，没有依赖，也没有后台服务。装好后新开一个 DSH 会话，标准 / 创造等带 skill 工具的预设会自动发现它，无需额外配置。
 
 ## 第一次使用
 
@@ -55,11 +52,13 @@ cp -r git-workflow ~/.dsh/skills/
 ## 仓库结构
 
 ```text
-git-workflow/
+git-workflow/                # 仓库根 = 技能目录（name: git-workflow）
+├── SKILL.md                 # skill 本体：完整工作流、话术与边界情况
 ├── README.md
-├── LICENSE
-└── git-workflow/
-    └── SKILL.md   # skill 本体：完整工作流、话术与边界情况
+├── LICENSE                  # MIT
+├── .gitignore
+└── assets/
+    └── readme/              # README 配图（hero.svg、before-after.svg），非技能资源
 ```
 
 ## License
